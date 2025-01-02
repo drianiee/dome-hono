@@ -27,5 +27,6 @@
   "scripts": {
     "start": "bun run server.js",
     "build": "echo 'No build step required'"
-  }
+  },
+  "type": "module"
 }
