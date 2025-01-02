@@ -25,6 +25,7 @@
     "typescript": "^5.7.2"
   },
   "scripts": {
-    "start": "bun run server.js"
+    "start": "bun run server.js",
+    "build": "echo 'No build step required'"
   }
 }
