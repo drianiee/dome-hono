@@ -3,7 +3,6 @@
     "framework": null,
     "outputDirectory": ".",
     "installCommand": "bun install",
-    "buildCommand": "bun run start",
-    "ignoreCommand": "git ls-files --exclude-standard --ignored --others"
+    "buildCommand": "bun run start"
   }
   
