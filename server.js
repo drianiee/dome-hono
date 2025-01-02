@@ -38,8 +38,9 @@ app.use(userRoutes);
 app.use(errorHandler);
 
 app.listen(port, () => {
-  console.log(`Yeay! Server is successfully running on port: ${port}`);
-});
+    console.log(`Server is running on port: ${port}`);
+    console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
+  });
 
 app.get('/', (req, res) => {
     res.send('Hello World!');

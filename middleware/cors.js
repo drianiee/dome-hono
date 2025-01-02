@@ -1,20 +1,20 @@
 const cors = (options) => {
     return (req, res, next) => {
-    const allowedOrigin = '*';
+        const allowedOrigin = options.origin || '*';
 
-    const corsHeaders = {
-        'Access-Control-Allow-Origin': allowedOrigin, 
-        'Access-Control-Allow-Methods': options.methods || 'GET, POST, PUT, DELETE, OPTIONS',
-        'Access-Control-Allow-Headers': options.allowedHeaders || 'Content-Type, Authorization',
-        'Access-Control-Allow-Credentials': options.credentials ? 'true' : 'false',
-    };
+        const corsHeaders = {
+            'Access-Control-Allow-Origin': allowedOrigin, 
+            'Access-Control-Allow-Methods': options.methods || 'GET, POST, PUT, DELETE, OPTIONS',
+            'Access-Control-Allow-Headers': options.allowedHeaders || 'Content-Type, Authorization',
+            'Access-Control-Allow-Credentials': options.credentials ? 'true' : 'false',
+        };
 
-    if (req.method === 'OPTIONS') {
-        return res.status(204).set(corsHeaders).end();
-    }
+        if (req.method === 'OPTIONS') {
+            return res.status(204).set(corsHeaders).end();
+        }
 
-    res.set(corsHeaders);
-    next();  
+        res.set(corsHeaders);
+        next();  
     };
 };
 
